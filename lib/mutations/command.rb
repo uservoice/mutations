@@ -56,8 +56,8 @@ module Mutations
     # Instance methods
     def initialize(*args)
       @raw_inputs = args.inject({}.with_indifferent_access) do |h, arg|
-        raise ArgumentError.new("All arguments must be hashes or respond to to_h") unless arg.respond_to?(:to_h)
-        h.merge!(arg.to_h)
+        raise ArgumentError.new("All arguments must be hashes or respond to to_hash") unless arg.respond_to?(:to_hash)
+        h.merge!(arg.to_hash)
       end
 
       # Do field-level validation / filtering:
